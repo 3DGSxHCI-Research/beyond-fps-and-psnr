@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3DGS &times; HCI &mdash; an explorable map of the corpus</title>
+  <meta name="description" content="An explorable map of human-centred research on 3D Gaussian Splatting: 328 papers, coded across application domain, interaction, representation and evaluation practice.">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/app.css?v=f24695b9">
+  <script>
+    /* Light is the default. Applied before first paint so the page never flashes. */
+    try {
+      if (localStorage.getItem("splatscope-theme") === "dark")
+        document.documentElement.setAttribute("data-theme", "dark");
+    } catch (e) { /* private mode: stay light */ }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 20'><ellipse cx='9.5' cy='9' rx='8' ry='5.2' transform='rotate(-22 9.5 9)' fill='%23efb591' stroke='%23c8622a'/><ellipse cx='16.5' cy='11.5' rx='7.5' ry='4.8' transform='rotate(18 16.5 11.5)' fill='%23a8bedd' fill-opacity='0.88' stroke='%234a6fa5'/></svg>">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="wordmark" href="#/" aria-label="3DGS times HCI, home">
+      <svg width="26" height="20" viewBox="0 0 26 20" aria-hidden="true" focusable="false">
+        <ellipse cx="9.5" cy="9" rx="8" ry="5.2" transform="rotate(-22 9.5 9)"
+                 fill="#efb591" stroke="#c8622a"></ellipse>
+        <ellipse cx="16.5" cy="11.5" rx="7.5" ry="4.8" transform="rotate(18 16.5 11.5)"
+                 fill="#a8bedd" fill-opacity="0.88" stroke="#4a6fa5"></ellipse>
+      </svg>
+      <span><b>3DGS</b> <span class="x">&times;</span> <b>HCI</b></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="nav">
+      <span id="nav-current">Overview</span><span class="nav-caret" aria-hidden="true">&#9662;</span>
+    </button>
+    <nav class="main" id="nav">
+      <a href="#/">Overview</a>
+      <a href="#/rq1">Where &amp; why</a>
+      <a href="#/rq2">Authoring</a>
+      <a href="#/rq3">Evidence</a>
+      <a href="#/rq4">Open questions</a>
+      <a href="#/build">Guide</a>
+      <a href="#/corpus">All papers</a>
+      <a href="#/matrix">Cross-tab</a>
+    </nav>
+    <button class="theme-btn" id="theme" type="button"
+            aria-pressed="false" title="Switch to dark mode">Dark</button>
+  </div>
+</header>
+
+<main id="app" class="wrap"></main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Companion to &ldquo;Beyond FPS and PSNR: A Scoping Review of Human-Centred Research in 3D Gaussian Splatting&rdquo;.
+      Every figure on this site is computed from the published coding workbook at build
+      time. Paper metadata and abstracts come from the publishers&rsquo; records.</p>
+    <p style="margin-top:12px">
+      <a href="data/corpus.bib" download>Download the full corpus BibTeX</a>
+    </p>
+    <p class="disclaimer">The build of this website was supported by Claude Code. All data,
+      coding and findings are the reviewers&rsquo; own: collected by hand from the full texts,
+      and double-checked against the published number audit, which derives every figure on
+      this site from a named sheet, column and filter.</p>
+  </div>
+</footer>
+
+<script src="data/papers.js?v=1b1f060b"></script>
+<script src="data/audit.js?v=a07b9762"></script>
+<script src="assets/app.js?v=de52cb1a"></script>
+</body>
+</html>
